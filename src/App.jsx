@@ -41,7 +41,7 @@ export const App = () => {
           Show All
         </button>
       </div>
-      <article className="mt-[2rem] flex flex-wrap items-center justify-between gap-10">
+      <article className="mt-[2rem] flex w-[100%] flex-wrap items-center justify-between gap-10">
         {filteredTickets.map((ticket) => {
           return (
             <section
