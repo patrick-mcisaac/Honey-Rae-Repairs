@@ -1,7 +1,8 @@
 {
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "semi": false,
-  "bracketSpacing": true,
-  "tabWidth": 4,
-  "trailingComma": "none"
+    "plugins": ["prettier-plugin-tailwindcss"],
+    "semi": false,
+    "bracketSpacing": true,
+    "tabWidth": 4,
+    "trailingComma": "none",
+    "arrowParens": "avoid"
 }
