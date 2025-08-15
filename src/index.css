@@ -3,11 +3,18 @@
 @import "tailwindcss";
 
 @layer base {
-  *,
-  *::before,
-  *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: var(--grey-light);
+    }
+}
+
+:root {
+    --grey-light: rgb(201, 198, 198);
 }
