@@ -10,7 +10,7 @@ export const CustomersList = () => {
     }, [])
 
     return (
-        <div className="m-20 flex items-center justify-around">
+        <div className="m-[5rem] flex flex-wrap items-center justify-between gap-20">
             {customers.map(customerObj => {
                 return <Users user={customerObj} key={customerObj.id} />
             })}

@@ -37,8 +37,8 @@ export const TicketList = () => {
     }, [searchTerm, allTickets])
 
     return (
-        <div className="flex flex-col items-start p-[2rem_5rem]">
-            <h2 className="m-[5rem_0_2rem_0] text-3xl">Tickets</h2>
+        <div className="flex flex-col items-start p-[0_5rem]">
+            <h2 className="m-[2rem_0] text-3xl">Tickets</h2>
             {/* placefilter here */}
             <FilterBar
                 setShowEmergencyOnly={setShowEmergencyOnly}

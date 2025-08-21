@@ -9,7 +9,7 @@ export const EmployeeList = () => {
         getAllEmployees().then(res => setEmployees(res))
     }, [])
     return (
-        <div className="m-20 flex justify-around">
+        <div className="m-[5rem] flex flex-wrap justify-between gap-[5rem_2rem]">
             {employees.map(employee => {
                 return <Employees state={employee} key={employee.id} />
             })}
