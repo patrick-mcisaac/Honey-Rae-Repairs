@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 export const NavBar = () => {
     return (
-        <ul className="flex h-15 items-center gap-10 bg-[#333] pl-10 text-white">
+        <ul className="flex h-[10vh] items-center gap-10 bg-[#333] pl-10 text-white">
             <li>
                 <Link to="/tickets">Tickets</Link>
             </li>
