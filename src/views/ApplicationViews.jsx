@@ -3,10 +3,11 @@ import { EmployeeList } from "../components/employees/EmployeeList"
 import { EmployeeDetails } from "../components/employees/EmployeeDetails"
 import { CustomerDetails } from "../components/customers/CustomerDetails"
 import { CustomersList } from "../components/customers/CustomersList"
-import { Welcome } from "../components/Welcome"
+import { Welcome } from "../components/welcome/Welcome"
 import { NavBar } from "../components/nav/NavBar"
 import { Route, Outlet, Routes } from "react-router-dom"
 import { useEffect, useState } from "react"
+import { EmployeeForm } from "../components/forms/EmployeeForm"
 
 export const ApplicationViews = () => {
     const [currentUser, setCurrentUser] = useState({})
@@ -41,6 +42,10 @@ export const ApplicationViews = () => {
                     <Route index element={<CustomersList />} />
                     <Route path=":customerId" element={<CustomerDetails />} />
                 </Route>
+                <Route
+                    path="profile"
+                    element={<EmployeeForm currentUser={currentUser} />}
+                />
             </Route>
         </Routes>
     )

@@ -13,8 +13,11 @@ export const EmployeeList = () => {
         <div className="m-[5rem] flex flex-wrap justify-between gap-[5rem_2rem]">
             {employees.map(employee => {
                 return (
-                    <Link to={`/employees/${employee.id}`}>
-                        <Employees state={employee} key={employee.id} />
+                    <Link
+                        key={employee.id}
+                        to={`/employees/${employee.userId}`}
+                    >
+                        <Employees state={employee} />
                     </Link>
                 )
             })}

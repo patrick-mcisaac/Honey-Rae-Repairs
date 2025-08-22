@@ -12,7 +12,7 @@ export const EmployeeDetails = () => {
 
     let html = employees
         .filter(employee => {
-            const filteredEmp = employee.id === parseInt(employeeId)
+            const filteredEmp = employee.userId === parseInt(employeeId)
             return filteredEmp
         })
         .map(filteredEmp => {
