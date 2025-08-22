@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export const NavBar = () => {
+    const navigate = useNavigate()
     return (
         <ul className="flex h-[10vh] items-center gap-10 bg-[#333] pl-10 text-white">
             <li>
@@ -15,9 +17,21 @@ export const NavBar = () => {
             <li>
                 <Link to="/profile">Profile</Link>
             </li>
-            <li className="mr-10 ml-auto">
-                <Link to="/logout">Log Out</Link>
-            </li>
+            {localStorage.getItem("honey_user") ? (
+                <li className="mr-10 ml-auto">
+                    <Link
+                        to=""
+                        onClick={() => {
+                            localStorage.removeItem("honey_user")
+                            navigate("/", { replace: true })
+                        }}
+                    >
+                        Log Out
+                    </Link>
+                </li>
+            ) : (
+                ""
+            )}
         </ul>
     )
 }
