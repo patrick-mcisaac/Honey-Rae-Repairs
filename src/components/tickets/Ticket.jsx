@@ -6,12 +6,12 @@ export const Ticket = ({ ticket }) => {
     const [assignedEmployee, setAssignedEmployee] = useState({})
 
     useEffect(() => {
-        getAllEmployees().then((res) => setEmployees(res))
+        getAllEmployees().then(res => setEmployees(res))
     }, [])
 
     useEffect(() => {
         const foundEmployee = employees.find(
-            (employee) => employee.id === ticket.employeeTickets[0]?.employeeId
+            employee => employee.id === ticket.employeeTickets[0]?.employeeId
         )
         setAssignedEmployee(foundEmployee)
     }, [employees, ticket])
