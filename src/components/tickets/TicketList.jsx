@@ -3,17 +3,21 @@ import { getAllTickets } from "../../services/TicketService.jsx"
 import { Ticket } from "./Ticket.jsx"
 import { FilterBar } from "../filter-bar/FilterBar.jsx"
 
-export const TicketList = () => {
+export const TicketList = ({ currentUser }) => {
     const [allTickets, setAllTickets] = useState([])
     const [showEmergencyOnly, setShowEmergencyOnly] = useState(false)
     const [filteredTickets, setFilteredTickets] = useState([])
     const [searchTerm, setSearchTerm] = useState("")
 
-    // initial render
-    useEffect(() => {
+    const getAndSetTickets = () => {
         getAllTickets().then(ticketsArray => {
             setAllTickets(ticketsArray)
         })
+    }
+
+    // initial render
+    useEffect(() => {
+        getAndSetTickets()
     }, [])
 
     // rerender when state changes
@@ -39,7 +43,7 @@ export const TicketList = () => {
     return (
         <div className="flex flex-col items-start p-[0_5rem]">
             <h2 className="m-[2rem_0] text-3xl">Tickets</h2>
-            {/* placefilter here */}
+            {/* place filter here */}
             <FilterBar
                 setShowEmergencyOnly={setShowEmergencyOnly}
                 setSearchTerm={setSearchTerm}
@@ -47,7 +51,12 @@ export const TicketList = () => {
             <article className="mt-[2rem] flex w-[100%] flex-wrap items-center justify-between gap-10">
                 {filteredTickets.map(ticketObject => {
                     return (
-                        <Ticket ticket={ticketObject} key={ticketObject.id} />
+                        <Ticket
+                            currentUser={currentUser}
+                            ticket={ticketObject}
+                            getAndSetTickets={getAndSetTickets}
+                            key={ticketObject.id}
+                        />
                     )
                 })}
             </article>
