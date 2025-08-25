@@ -1,7 +1,7 @@
 import { Link, Navigate } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 
-export const NavBar = () => {
+export const EmployeeNavBar = () => {
     const navigate = useNavigate()
     return (
         <ul className="flex h-[10vh] items-center gap-10 bg-[#333] pl-10 text-white">
