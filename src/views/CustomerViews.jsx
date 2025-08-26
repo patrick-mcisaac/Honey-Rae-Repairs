@@ -3,6 +3,7 @@ import { Welcome } from "../components/welcome/Welcome"
 import { CustomerNav } from "../components/nav/CustomerNav"
 import { TicketList } from "../components/tickets/TicketList"
 import { NewTicket } from "../components/forms/NewTicket"
+import { CustomerForm } from "../components/forms/CustomerForm"
 
 export const CustomerViews = ({ currentUser }) => {
     return (
@@ -27,6 +28,10 @@ export const CustomerViews = ({ currentUser }) => {
                         element={<NewTicket currentUser={currentUser} />}
                     />
                 </Route>
+                <Route
+                    path="profile"
+                    element={<CustomerForm currentUser={currentUser} />}
+                />
             </Route>
         </Routes>
     )

@@ -6,6 +6,9 @@ export const CustomerNav = () => {
             <li className="hover:scale-110 hover:text-amber-600">
                 <Link to="/tickets">Tickets</Link>
             </li>
+            <li>
+                <Link to="/profile">Profile</Link>
+            </li>
             <li className="mr-10 ml-auto hover:scale-110 hover:text-amber-600">
                 <Link
                     to=""
