@@ -32,20 +32,20 @@ export const FilterBar = ({
             ) : (
                 <>
                     <button
-                        onClick={() => navigate("/new-ticket")}
+                        onClick={() => navigate("/tickets/create")}
                         className="w-[8rem] cursor-pointer rounded-xl border-0 border-black bg-blue-400 p-1 shadow-sm shadow-cyan-950 hover:scale-110"
                     >
                         Create Ticket
                     </button>
 
                     <button
-                        className="mr-auto w-[8rem] cursor-pointer rounded-xl border-0 border-black bg-blue-400 p-1 shadow-sm shadow-cyan-950 hover:scale-110"
+                        className="w-[8rem] cursor-pointer rounded-xl border-0 border-black bg-blue-400 p-1 shadow-sm shadow-cyan-950 hover:scale-110"
                         onClick={() => setShowOpenOnly(true)}
                     >
                         Open Tickets
                     </button>
                     <button
-                        className="mr-auto w-[8rem] cursor-pointer rounded-xl border-0 border-black bg-blue-400 p-1 shadow-sm shadow-cyan-950 hover:scale-110"
+                        className="w-[8rem] cursor-pointer rounded-xl border-0 border-black bg-blue-400 p-1 shadow-sm shadow-cyan-950 hover:scale-110"
                         onClick={() => setShowOpenOnly(false)}
                     >
                         All My Tickets

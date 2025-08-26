@@ -2,7 +2,7 @@ import { Outlet, Route, Routes } from "react-router-dom"
 import { Welcome } from "../components/welcome/Welcome"
 import { CustomerNav } from "../components/nav/CustomerNav"
 import { TicketList } from "../components/tickets/TicketList"
-import { NewTicket } from "../components/tickets/NewTicket"
+import { NewTicket } from "../components/forms/NewTicket"
 
 export const CustomerViews = ({ currentUser }) => {
     return (
@@ -17,14 +17,16 @@ export const CustomerViews = ({ currentUser }) => {
                 }
             >
                 <Route index element={<Welcome />} />
-                <Route
-                    path="tickets"
-                    element={<TicketList currentUser={currentUser} />}
-                />
-                <Route
-                    path="new-ticket"
-                    element={<NewTicket currentUser={currentUser} />}
-                />
+                <Route path="tickets">
+                    <Route
+                        index
+                        element={<TicketList currentUser={currentUser} />}
+                    />
+                    <Route
+                        path="create"
+                        element={<NewTicket currentUser={currentUser} />}
+                    />
+                </Route>
             </Route>
         </Routes>
     )
