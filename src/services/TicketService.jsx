@@ -23,3 +23,9 @@ export const closeTicket = ticket => {
         body: JSON.stringify(ticket)
     })
 }
+
+export const deleteTicket = id => {
+    return fetch(`http://localhost:8088/serviceTickets/${id}`, {
+        method: "DELETE"
+    })
+}

@@ -3,7 +3,10 @@ export const CustomerNav = () => {
     const navigate = useNavigate()
     return (
         <ul className="flex h-[10vh] items-center gap-10 bg-[#333] pl-10 text-white">
-            <li className="mr-10 ml-auto">
+            <li className="hover:scale-110 hover:text-amber-600">
+                <Link to="/tickets">Tickets</Link>
+            </li>
+            <li className="mr-10 ml-auto hover:scale-110 hover:text-amber-600">
                 <Link
                     to=""
                     onClick={() => {
